@@ -69,7 +69,6 @@ modification de fichier.
 
 ## Reste à faire
 
-- [ ] Remplacer l'e-mail d'exemple (`contact@example.fr`) partout
 - [ ] Renseigner les vrais horaires (contact.md, pied de page, head-additions.html)
 - [ ] Remplacer les billets d'exemple dans `content/actualites/` et `content/agenda/`
 - [ ] Compléter la page `content/la-librairie.md`
