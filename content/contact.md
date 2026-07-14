@@ -14,7 +14,7 @@ description: "Adresse, horaires, téléphone et plan d'accès de la librairie La
 ## Nous contacter
 
 - Téléphone : [01 64 70 68 93](tel:+33164706893)
-- E-mail : [contact@example.fr](mailto:contact@example.fr) *(à remplacer par la vraie adresse)*
+- E-mail : [contact@example.fr](mailto:contact@laparenthese.samois@gmail.com) *(à remplacer par la vraie adresse)*
 
 Pour commander un livre, appelez-nous ou écrivez-nous : nous le
 mettons de côté et vous prévenons dès qu'il est arrivé.

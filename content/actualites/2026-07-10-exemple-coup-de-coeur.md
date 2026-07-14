@@ -2,7 +2,7 @@
 title: "Exemple — Notre coup de cœur de l'été"
 date: 2026-07-10
 summary: "Un exemple de billet « coup de cœur » : remplacez ce texte par votre propre chronique."
-tags: ["coup de cœur"]
+tags: ["coup de cœur", "samois"]
 ---
 
 *Ceci est un billet d'exemple, à remplacer ou supprimer.*
