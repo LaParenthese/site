@@ -1,0 +1,13 @@
+{{/* Surcharge Ananke : bandeau d'accueil aligné sur la hauteur des
+     autres pages (même gabarit que page-header.html). */}}
+<header>
+  <div class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+    {{ partials.Include "site-navigation.html" . }}
+    <div class="tc ph3 ph4-ns pv4 pv5-l">
+      <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{ .Title | compare.Default .Site.Title }}</h1>
+      {{ with .Params.description }}
+        <h2 class="fw1 f5 f4-l white-80 measure-wide center lh-copy mt3 mb0">{{ . }}</h2>
+      {{ end }}
+    </div>
+  </div>
+</header>

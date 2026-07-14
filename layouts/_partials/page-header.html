@@ -1,0 +1,26 @@
+{{/* Surcharge Ananke : bandeau uniforme, même hauteur sur toutes les
+     pages (même gabarit que site-header.html).
+     Pour un billet d'actualité ou d'agenda, le bandeau affiche le nom
+     de la section — le titre du billet reste dans l'article. */}}
+{{- $band_title := .Title -}}
+{{- $band_description := .Params.description -}}
+{{- if and .IsPage (in (slice "actualites" "agenda") .Section) -}}
+  {{- with .Site.GetPage (printf "/%s" .Section) -}}
+    {{- $band_title = .Title -}}
+    {{- $band_description = "" -}}
+  {{- end -}}
+{{- end -}}
+{{- if compare.Eq .Kind "404" -}}
+  {{- $band_title = "Page introuvable" -}}
+{{- end -}}
+<header>
+  <div class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+    {{ partials.Include "site-navigation.html" . }}
+    <div class="tc ph3 ph4-ns pv4 pv5-l">
+      <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{ $band_title }}</h1>
+      {{ with $band_description }}
+        <h2 class="fw1 f5 f4-l white-80 measure-wide center lh-copy mt3 mb0">{{ . }}</h2>
+      {{ end }}
+    </div>
+  </div>
+</header>

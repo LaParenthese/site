@@ -32,8 +32,9 @@
 
 /* ------------------------------------------------------------
    Typographie : Cinzel rappelle les capitales gravées du logo,
-   EB Garamond pour le texte courant. Les deux sont chargées
-   dans layouts/_partials/head-additions.html
+   EB Garamond pour le texte courant. Polices auto-hébergées
+   (static/fonts/) : pas d'appel aux serveurs de Google (RGPD)
+   et chargement plus rapide.
    ------------------------------------------------------------ */
 .garamond {
   font-family: "EB Garamond", Georgia, "Times New Roman", serif;
@@ -69,6 +70,40 @@ main a,
 main a:hover,
 .nested-links a:hover {
   color: var(--brand);
+}
+
+/* ------------------------------------------------------------
+   Logo dans la barre de navigation (remplace le titre texte,
+   sert de bouton retour à l'accueil)
+   ------------------------------------------------------------ */
+nav a img {
+  height: 2.75rem;
+  width: auto;
+  max-width: none;
+  display: block;
+}
+
+@media (min-width: 60em) {
+  nav a img {
+    height: 3.25rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   Boutons « lire plus » : contour aux couleurs de la maison
+   au lieu du gris générique du thème
+   ------------------------------------------------------------ */
+a.bg-light-gray {
+  background-color: transparent;
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+a.hover-bg-moon-gray:hover,
+a.hover-bg-moon-gray:focus {
+  background-color: var(--brand);
+  border-color: var(--brand);
+  color: var(--paper);
 }
 
 /* ------------------------------------------------------------

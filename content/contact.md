@@ -1,6 +1,7 @@
 ---
 title: "Contact & accès"
 description: "Adresse, horaires, téléphone et plan d'accès de la librairie La Parenthèse à Samois-sur-Seine."
+layout: "simple"
 ---
 
 ## Nous trouver

@@ -1,7 +1,7 @@
 ---
 title: "La librairie & le café"
 description: "Une librairie généraliste indépendante et un café, au cœur de Samois-sur-Seine."
-menu: ""
+layout: "simple"
 ---
 
 ## La librairie

@@ -20,6 +20,14 @@ copyright = "La Parenthèse, Samois-sur-Seine"
   background_color_class = "bg-parenthese"
   body_classes = "bg-paper garamond"
   recent_posts_number = 3
+  # Logo blanc (sans l'adresse) affiché en haut à gauche, bouton accueil.
+  # Généré depuis le bandeau ; le favicon reprend les arbres du logo.
+  site_logo = "/images/logo-nav.png"
+  favicon = "/favicon.png"
+  # Format des dates : « 14 juillet 2026 »
+  date_format = "2 January 2006"
+  # Image utilisée par défaut pour les aperçus de partage (og:image)
+  images = ["/images/bandeau-la-parenthese.png"]
 
   [params.ananke]
     show_recent_posts = true
@@ -28,9 +36,18 @@ copyright = "La Parenthèse, Samois-sur-Seine"
     [params.ananke.home]
       content_alignment = "center"
 
-    # Réseaux sociaux : décommenter et compléter quand les comptes existent.
+    # Boutons de partage affichés sur chaque billet (actualités, agenda).
+    # Icônes seules : les libellés du thème sont en anglais.
+    [params.ananke.social.share]
+      networks = ["facebook", "whatsapp", "email"]
+      sharetext = false
+
+    # Lien « suivez-nous » : décommenter et mettre le vrai compte
+    # Instagram de la librairie pour l'activer (icône dans le pied de page).
     # [params.ananke.social.follow]
-    #   networks = ["instagram", "facebook"]
+    #   networks = ["instagram"]
+    # [params.ananke.social.instagram]
+    #   username = "compte_instagram_de_la_librairie"
 
 [markup.goldmark.renderer]
   # Autorise le HTML dans les fichiers Markdown (utile pour la page contact).

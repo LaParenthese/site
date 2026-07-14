@@ -1,0 +1,21 @@
+{{ define "header" }}{{ partials.Include "page-header.html" . }}{{ end }}
+{{ define "main" }}
+  {{/* Gabarit « simple » pour les pages fixes (contact, la librairie…),
+       activé par « layout: simple » dans l'en-tête du fichier Markdown.
+       Le titre est déjà affiché dans le bandeau (page-header.html),
+       on ne le répète pas dans l'article. */}}
+  <div class="flex-l mt2 mw8 center">
+    {{- $post_class := "" -}}
+    {{- with .File -}}
+      {{- $post_class = printf "page-%s" .ContentBaseName -}}
+    {{- end -}}
+
+    <article class="{{ $post_class }} center cf pv4 ph3 ph4-ns mw7">
+      <div class="nested-copy-line-height lh-copy f4 nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
+        {{- partials.Include "hook.html" (dict "hook" "content-before" "context" .) -}}
+        {{ .Content }}
+        {{- partials.Include "hook.html" (dict "hook" "content-after" "context" .) -}}
+      </div>
+    </article>
+  </div>
+{{ end }}
