@@ -3,9 +3,7 @@
 # Configuration principale du site.
 # ============================================================
 
-# TODO : remplacer par le vrai nom de domaine une fois enregistré,
-# par ex. https://laparenthese-samois.fr/
-baseURL = "https://laparenthese-samois.pages.dev/"
+baseURL = "https://laparenthese-samois.com/"
 
 locale = "fr-FR"
 defaultContentLanguage = "fr"

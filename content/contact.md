@@ -27,4 +27,4 @@ mettons de côté et vous prévenons dès qu'il est arrivé.
 |------|----------|
 | Lundi | Fermé |
 | Mardi – Samedi | 9h30 – 19h |
-| Dimanche | 9h30 – 13h |
+| Samedi | 9h30 – 13h |

@@ -73,4 +73,4 @@ modification de fichier.
 - [ ] Remplacer les billets d'exemple dans `content/actualites/` et `content/agenda/`
 - [ ] Compléter la page `content/la-librairie.md`
 - [ ] Ajouter des photos (devanture, intérieur) dans `static/images/`
-- [ ] Mettre le vrai nom de domaine dans `hugo.toml` (`baseURL`)
+
