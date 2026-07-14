@@ -1,0 +1,30 @@
+{{/* Surcharge du partage Ananke, avec liens corrigés :
+     - WhatsApp via https://wa.me (le schéma whatsapp:// du thème est
+       bloqué par le moteur de templates et rendait un lien mort) ;
+     - mailto avec espaces en %20 (le thème les encodait en « + ») ;
+     - libellés en français.
+     Icônes : assets/ananke/socials/ (envelope.svg fourni par le site). */}}
+{{- if not .Params.disable_share -}}
+{{- $url := urlquery .Permalink -}}
+{{- $title := replace (urlquery .Title) "+" "%20" -}}
+{{- $links := collections.Slice
+      (dict "slug" "facebook" "label" "Partager sur Facebook" "newtab" true
+            "href" (printf "https://www.facebook.com/sharer/sharer.php?u=%s" $url))
+      (dict "slug" "whatsapp" "label" "Partager sur WhatsApp" "newtab" true
+            "href" (printf "https://wa.me/?text=%s%%20%s" $title $url))
+      (dict "slug" "email" "label" "Partager par e-mail" "icon" "envelope"
+            "href" (printf "mailto:?subject=%s&body=%s" $title $url))
+-}}
+<div id="sharing" class="mt3 ananke-socials">
+  {{- range $links }}
+  <a href="{{ .href | safeURL }}"
+     class="ananke-social-link {{ .slug }} no-underline"
+     title="{{ .label }}" aria-label="{{ .label }}"
+     {{- if .newtab }} target="_blank" rel="nofollow noopener noreferrer"{{ end }}>
+    {{- with resources.Get (printf "ananke/socials/%s.svg" (.icon | compare.Default .slug)) -}}
+      <span class="icon">{{ .Content | safe.HTML }}</span>
+    {{- end -}}
+  </a>
+  {{- end }}
+</div>
+{{- end -}}

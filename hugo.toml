@@ -37,11 +37,9 @@ copyright = "La Parenthèse, Samois-sur-Seine"
     [params.ananke.home]
       content_alignment = "center"
 
-    # Boutons de partage affichés sur chaque billet (actualités, agenda).
-    # Icônes seules : les libellés du thème sont en anglais.
-    [params.ananke.social.share]
-      networks = ["facebook", "whatsapp", "email"]
-      sharetext = false
+    # Boutons de partage sur chaque billet : Facebook, WhatsApp, e-mail.
+    # Définis dans layouts/_partials/social/share.html (surcharge du
+    # thème) — la liste « networks » du thème n'est plus utilisée.
 
     # Lien « suivez-nous » vers l'Instagram de la librairie
     # (icône affichée dans la navigation et le pied de page).
