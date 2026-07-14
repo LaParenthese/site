@@ -1,0 +1,17 @@
+{{/* Fiche livre avec couverture, pour les billets « nouveautés » et
+     « coups de cœur ». Paramètres : src (image), titre, auteur,
+     editeur (optionnel), prix (optionnel). Le texte placé entre les
+     balises ouvrante et fermante devient la chronique.
+     Exemple d'usage : content/actualites/2026-07-14-exemple-nouveaute-avec-couverture.md */}}
+<div class="cf mv4">
+  <img src="{{ .Get "src" }}"
+       alt="Couverture du livre {{ .Get "titre" }}"
+       loading="lazy"
+       style="float: left; width: 140px; max-width: 35%; margin: 0.3rem 1.5rem 1rem 0; box-shadow: 2px 3px 10px rgba(13, 37, 48, 0.35);">
+  <p class="mt0 mb1">
+    <strong>{{ .Get "titre" }}</strong><br>
+    {{ .Get "auteur" }}{{ with .Get "editeur" }} — {{ . }}{{ end }}{{ with .Get "prix" }} · {{ . }}{{ end }}
+  </p>
+  {{ .Inner | markdownify }}
+</div>
+<div style="clear: both;"></div>

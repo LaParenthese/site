@@ -4,8 +4,6 @@ description: "Une librairie généraliste indépendante et un café, au cœur de
 menu: ""
 ---
 
-*Texte à compléter par la libraire — quelques pistes ci-dessous.*
-
 ## La librairie
 
 La Parenthèse est une librairie généraliste indépendante : romans,

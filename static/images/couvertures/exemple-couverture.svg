@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <!-- Couverture d'exemple : à remplacer par la photo/scan de la vraie
+       couverture (jpg ou png), déposée dans static/images/couvertures/ -->
+  <rect width="400" height="600" fill="#0d2530"/>
+  <rect x="18" y="18" width="364" height="564" fill="none" stroke="#faf7f0" stroke-width="2"/>
+  <text x="200" y="150" text-anchor="middle" fill="#faf7f0" font-family="Georgia, serif" font-size="34" letter-spacing="4">TITRE</text>
+  <text x="200" y="200" text-anchor="middle" fill="#faf7f0" font-family="Georgia, serif" font-size="34" letter-spacing="4">DU LIVRE</text>
+  <text x="200" y="320" text-anchor="middle" fill="#faf7f0" font-family="Georgia, serif" font-size="22" font-style="italic">Nom de l'auteur</text>
+  <text x="200" y="540" text-anchor="middle" fill="#faf7f0" font-family="Georgia, serif" font-size="16" letter-spacing="2">ÉDITEUR</text>
+</svg>

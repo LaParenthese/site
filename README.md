@@ -28,6 +28,10 @@ Site statique généré avec [Hugo](https://gohugo.io/) et le thème
 
 Même principe pour un événement : fichier dans `content/agenda/`.
 
+Pour présenter un livre avec sa couverture, recopier le modèle
+`content/actualites/2026-07-14-exemple-nouveaute-avec-couverture.md`
+(la couverture se dépose dans `static/images/couvertures/`).
+
 En local, on peut aussi utiliser : `hugo new content actualites/mon-billet.md`
 
 ## Prévisualiser en local
