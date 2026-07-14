@@ -28,9 +28,21 @@ Site statique généré avec [Hugo](https://gohugo.io/) et le thème
 
 Même principe pour un événement : fichier dans `content/agenda/`.
 
-Pour présenter un livre avec sa couverture, recopier le modèle
-`content/actualites/2026-07-14-exemple-nouveaute-avec-couverture.md`
-(la couverture se dépose dans `static/images/couvertures/`).
+Pour présenter un livre avec sa couverture : déposer la photo de la
+couverture dans `static/images/couvertures/` puis utiliser le bloc
+`livre` dans le billet :
+
+```markdown
+{{</* livre src="/images/couvertures/mon-livre.jpg"
+          titre="Titre du livre"
+          auteur="Nom de l'auteur"
+          editeur="Éditeur"
+          prix="21 €" */>}}
+La chronique s'écrit ici, elle habille la couverture automatiquement.
+{{</* /livre */>}}
+```
+
+On peut enchaîner plusieurs blocs `livre` dans le même billet.
 
 En local, on peut aussi utiliser : `hugo new content actualites/mon-billet.md`
 
