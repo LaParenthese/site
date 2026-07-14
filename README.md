@@ -46,6 +46,13 @@ On peut enchaîner plusieurs blocs `livre` dans le même billet.
 
 En local, on peut aussi utiliser : `hugo new content actualites/mon-billet.md`
 
+## Préparer un nouvel ordinateur
+
+Sur un poste Windows vierge, exécuter `scripts/setup-poste.ps1`
+(PowerShell) : il installe Git, GitHub CLI, Hugo et VS Code, configure
+l'identité Git, connecte le compte GitHub et clone le site dans
+`Documents\site-la-parenthese`. Relançable sans risque.
+
 ## Prévisualiser en local
 
 [Installer Hugo](https://gohugo.io/installation/) (version « extended »,
