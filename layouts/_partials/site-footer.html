@@ -1,0 +1,28 @@
+{{/* Surcharge du pied de page Ananke : coordonnées et horaires
+     de la librairie sur chaque page. */}}
+<footer class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }} bottom-0 w-100 pa4" role="contentinfo">
+  <div class="flex-ns justify-between mw8 center">
+    <div class="pv2">
+      <span class="f4 fw6 white db mb2" style="font-family: 'Cinzel', serif;">La Parenthèse</span>
+      <span class="db">Café &amp; Librairie</span>
+      <span class="db mt2">47 rue des Martyrs<br>77920 Samois-sur-Seine</span>
+    </div>
+    <div class="pv2">
+      <span class="f5 fw6 white db mb2">Nous contacter</span>
+      <span class="db"><a href="tel:+33164706893" class="no-underline">01 64 70 68 93</a></span>
+      {{/* TODO : remplacer par la vraie adresse e-mail */}}
+      <span class="db"><a href="mailto:contact@example.fr" class="no-underline">contact@example.fr</a></span>
+    </div>
+    <div class="pv2">
+      <span class="f5 fw6 white db mb2">Horaires</span>
+      {{/* TODO : mettre les vrais horaires d'ouverture */}}
+      <span class="db">Mardi – Samedi : 9h30 – 19h</span>
+      <span class="db">Dimanche : 9h30 – 13h</span>
+      <span class="db">Fermé le lundi</span>
+    </div>
+  </div>
+  <div class="mw8 center bt b--white-20 mt3 pt3 flex justify-between">
+    <span class="f6">&copy; {{ with .Site.Copyright | compare.Default .Site.Title }}{{ . | safe.HTML }} {{ now.Format "2006" }}{{ end }}</span>
+    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
+  </div>
+</footer>

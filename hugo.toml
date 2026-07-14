@@ -1,0 +1,59 @@
+# ============================================================
+# La Parenthèse — Café & Librairie (Samois-sur-Seine)
+# Configuration principale du site.
+# ============================================================
+
+# TODO : remplacer par le vrai nom de domaine une fois enregistré,
+# par ex. https://laparenthese-samois.fr/
+baseURL = "https://laparenthese-samois.pages.dev/"
+
+locale = "fr-FR"
+defaultContentLanguage = "fr"
+title = "La Parenthèse — Café & Librairie"
+theme = "ananke"
+copyright = "La Parenthèse, Samois-sur-Seine"
+
+[params]
+  # La page d'accueil liste les derniers billets de cette section.
+  mainSections = ["actualites"]
+  # Classe CSS du bandeau d'en-tête et du pied de page.
+  # .bg-parenthese est définie dans assets/ananke/css/custom.css
+  # (c'est là que se règlent toutes les couleurs de la marque).
+  background_color_class = "bg-parenthese"
+  body_classes = "bg-paper garamond"
+  recent_posts_number = 3
+
+  [params.ananke]
+    show_recent_posts = true
+    custom_css = ["custom.css"]
+
+    [params.ananke.home]
+      content_alignment = "center"
+
+    # Réseaux sociaux : décommenter et compléter quand les comptes existent.
+    # [params.ananke.social.follow]
+    #   networks = ["instagram", "facebook"]
+
+[markup.goldmark.renderer]
+  # Autorise le HTML dans les fichiers Markdown (utile pour la page contact).
+  unsafe = true
+
+[[menus.main]]
+  name = "Actualités"
+  pageRef = "/actualites"
+  weight = 10
+
+[[menus.main]]
+  name = "Agenda"
+  pageRef = "/agenda"
+  weight = 20
+
+[[menus.main]]
+  name = "La librairie"
+  pageRef = "/la-librairie"
+  weight = 30
+
+[[menus.main]]
+  name = "Contact"
+  pageRef = "/contact"
+  weight = 40

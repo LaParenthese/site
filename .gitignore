@@ -1,0 +1,4 @@
+# Sorties de build Hugo — régénérées à chaque déploiement
+/public/
+/resources/
+.hugo_build.lock

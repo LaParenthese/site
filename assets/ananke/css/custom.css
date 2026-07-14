@@ -1,0 +1,92 @@
+/* ============================================================
+   CHARTE GRAPHIQUE — La Parenthèse
+   Toutes les couleurs de la marque sont définies ici et
+   uniquement ici. Si le logo change, modifier ces variables
+   suffit à mettre tout le site à jour.
+   ============================================================ */
+:root {
+  /* Bleu pétrole profond de la façade / du logo */
+  --brand: #0d2530;
+  /* Texte posé sur le fond --brand */
+  --brand-text: #ffffff;
+  /* Fond des pages : blanc cassé "papier" */
+  --paper: #faf7f0;
+  /* Couleur du texte courant */
+  --ink: #22292e;
+  /* Couleur des liens et petits accents */
+  --accent: #16455c;
+}
+
+/* ------------------------------------------------------------
+   Classes utilitaires branchées sur la palette ci-dessus.
+   Référencées depuis hugo.toml (background_color_class,
+   body_classes) — ne pas renommer sans mettre à jour la config.
+   ------------------------------------------------------------ */
+.bg-parenthese {
+  background-color: var(--brand);
+}
+
+.bg-paper {
+  background-color: var(--paper);
+}
+
+/* ------------------------------------------------------------
+   Typographie : Cinzel rappelle les capitales gravées du logo,
+   EB Garamond pour le texte courant. Les deux sont chargées
+   dans layouts/_partials/head-additions.html
+   ------------------------------------------------------------ */
+.garamond {
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 1.08em;
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+.f1,
+.f2,
+.f-5,
+.f-6 {
+  font-family: "Cinzel", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* Le contenu des articles reste en Garamond, plus lisible */
+.nested-copy-line-height p,
+.nested-copy-line-height li {
+  line-height: 1.65;
+}
+
+/* Liens dans le corps de page */
+main a,
+.nested-links a {
+  color: var(--accent);
+  transition: color 0.15s ease-in;
+}
+
+main a:hover,
+.nested-links a:hover {
+  color: var(--brand);
+}
+
+/* ------------------------------------------------------------
+   Petits ajustements
+   ------------------------------------------------------------ */
+
+/* Bandeau de titre : espacement plus généreux, à la façon
+   de l'enseigne */
+.bg-parenthese h1 {
+  letter-spacing: 0.08em;
+}
+
+/* Pied de page : texte légèrement adouci */
+footer.bg-parenthese,
+footer.bg-parenthese a {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+footer.bg-parenthese a:hover {
+  color: var(--brand-text);
+}
