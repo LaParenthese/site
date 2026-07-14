@@ -21,9 +21,9 @@ mettons de côté et vous prévenons dès qu'il est arrivé.
 
 ## Horaires
 
-| Jour | Horaires Matin | Horaires Apres-midi |
-|------|----------| ----------|
+| Jour | Matin | Après-midi |
+|------|-------|------------|
 | Lundi | Fermé | Fermé |
 | Mardi | Fermé | 15h – 19h |
-| Mercedit – Samedi | 10h – 13h | 15h - 19h |
-| Dimanche | Fermé | 
+| Mercredi – Samedi | 10h – 13h | 15h – 19h |
+| Dimanche | Fermé | Fermé |

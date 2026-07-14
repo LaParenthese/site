@@ -9,8 +9,7 @@
 {{/* Données structurées LocalBusiness : permet à Google d'afficher
      l'adresse, le téléphone et les horaires dans les résultats de
      recherche et sur Maps.
-     TODO : compléter openingHours quand les horaires sont connus,
-     affiner les coordonnées GPS (actuellement centre de Samois). */}}
+     TODO : affiner les coordonnées GPS (actuellement centre de Samois). */}}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -30,6 +29,26 @@
     "@type": "GeoCoordinates",
     "latitude": 48.4536,
     "longitude": 2.7509
-  }
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "15:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "13:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "15:00",
+      "closes": "19:00"
+    }
+  ]
 }
 </script>
