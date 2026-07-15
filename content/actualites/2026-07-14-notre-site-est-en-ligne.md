@@ -1,7 +1,7 @@
 ---
 title: "Notre site est en ligne !"
 date: 2026-07-14
-summary: "La Parenthèse a désormais son site : actualités, coups de cœur, agenda des rencontres et infos pratiques."
+summary: "La Parenthèse a désormais son site: actualités, coups de cœur, agenda des rencontres et infos pratiques."
 tags: ["la librairie"]
 ---
 
