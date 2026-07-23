@@ -44,6 +44,17 @@ La chronique s'écrit ici, elle habille la couverture automatiquement.
 
 On peut enchaîner plusieurs blocs `livre` dans le même billet.
 
+Pour inviter à commander le livre présenté, ajouter en dessous un bouton
+« Commander ce livre » : il ouvre la page de commande avec le titre déjà
+rempli (le lecteur n'a plus qu'à laisser son nom et son e-mail).
+
+```markdown
+{{</* commander-ce-livre livre="Titre du livre — Nom de l'auteur" */>}}
+```
+
+Sans le paramètre `livre`, le bouton mène au formulaire vierge. On peut
+aussi changer le texte du bouton avec `texte="…"`.
+
 En local, on peut aussi utiliser : `hugo new content actualites/mon-billet.md`
 
 ## Préparer un nouvel ordinateur

@@ -68,6 +68,11 @@ copyright = "La Parenthèse, Samois-sur-Seine"
   weight = 30
 
 [[menus.main]]
+  name = "Commander un livre"
+  pageRef = "/commander"
+  weight = 40
+
+[[menus.main]]
   name = "Contact"
   pageRef = "/contact"
-  weight = 40
+  weight = 50

@@ -7,7 +7,7 @@
   <img src="{{ .Get "src" }}"
        alt="Couverture du livre {{ .Get "titre" }}"
        loading="lazy"
-       style="float: left; width: 140px; max-width: 35%; margin: 0.3rem 1.5rem 1rem 0; box-shadow: 2px 3px 10px rgba(13, 37, 48, 0.35);">
+       style="float: left; width: 170px; max-width: 42%; margin: 0.3rem 1.5rem 1rem 0; box-shadow: 2px 3px 10px rgba(13, 37, 48, 0.35);">
   <p class="mt0 mb1">
     <strong>{{ .Get "titre" }}</strong><br>
     {{ .Get "auteur" }}{{ with .Get "editeur" }} — {{ . }}{{ end }}{{ with .Get "prix" }} · {{ . }}{{ end }}

@@ -1,0 +1,18 @@
+{{/* Bouton « Commander ce livre » à placer au bas d'un billet.
+     Il ouvre la page « Commander un livre » avec le champ déjà rempli,
+     pour que le lecteur n'ait plus qu'à laisser son nom et son e-mail.
+     Paramètres :
+       livre — titre (et auteur) pré-rempli dans le formulaire ;
+       texte — libellé du bouton (défaut : « Commander ce livre »).
+     Exemple, entre accolades-chevrons dans le Markdown :
+       commander-ce-livre livre="Le Comte de Monte-Cristo — Alexandre Dumas"
+     Sans paramètre, le bouton mène au formulaire vierge. */}}
+{{- $href := "/commander/" | relURL -}}
+{{- with .Get "livre" -}}
+  {{- $href = printf "%s?%s" $href (querify "livre" .) -}}
+{{- end -}}
+<p class="mv4">
+  <a class="commander-bouton" href="{{ $href }}">
+    {{ .Get "texte" | default "Commander ce livre" }}
+  </a>
+</p>

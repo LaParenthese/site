@@ -125,3 +125,152 @@ footer.bg-parenthese a {
 footer.bg-parenthese a:hover {
   color: var(--brand-text);
 }
+
+/* ------------------------------------------------------------
+   Formulaire de commande (shortcode « commande »)
+   ------------------------------------------------------------ */
+.commande-form {
+  margin: 2rem 0;
+}
+
+.commande-form__label {
+  display: block;
+  margin: 1.1rem 0 0.35rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.commande-form__hint {
+  font-weight: 400;
+  color: rgba(34, 41, 46, 0.6);
+}
+
+.commande-form__field {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  font-family: inherit;
+  /* Lisible et, à ≥ 16px, évite le zoom automatique sur mobile. */
+  font-size: 1.15rem;
+  color: var(--ink);
+  background-color: #fff;
+  border: 1px solid rgba(13, 37, 48, 0.25);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.commande-form__field:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(22, 69, 92, 0.15);
+}
+
+.commande-form__submit {
+  margin-top: 1.4rem;
+  padding: 0.7rem 1.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--paper);
+  background-color: var(--brand);
+  border: 1px solid var(--brand);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+}
+
+.commande-form__submit:hover,
+.commande-form__submit:focus {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.commande-form__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.commande-form__status {
+  margin-top: 1rem;
+  min-height: 1.2em;
+  font-weight: 600;
+}
+
+.commande-form__status--ok {
+  color: #1c6b3c;
+}
+
+.commande-form__status--error {
+  color: #a12727;
+}
+
+/* ------------------------------------------------------------
+   Tuiles de la liste « Actualités » : carte entièrement
+   cliquable (surcharge layouts/summary.html)
+   ------------------------------------------------------------ */
+.tile {
+  position: relative;
+  border: 1px solid rgba(13, 37, 48, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(13, 37, 48, 0.08);
+  transition: box-shadow 0.15s ease-in, transform 0.15s ease-in;
+}
+
+.tile:hover,
+.tile:focus-within {
+  box-shadow: 0 6px 18px rgba(13, 37, 48, 0.18);
+  transform: translateY(-2px);
+}
+
+.tile__date {
+  color: rgba(34, 41, 46, 0.55);
+}
+
+/* Le lien du titre s'étend à toute la carte : clic partout = ouverture. */
+.tile__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.tile__link,
+main .tile__link {
+  color: var(--brand);
+}
+
+/* Repère « Lire la suite → », lisible et aux couleurs de la maison. */
+.tile__more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.tile:hover .tile__more {
+  color: var(--brand);
+}
+
+/* Bouton « Commander ce livre » posé au bas d'un billet
+   (shortcode « commander-ce-livre ») */
+.commander-bouton,
+main a.commander-bouton {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  font-weight: 600;
+  color: var(--paper);
+  background-color: var(--brand);
+  border: 1px solid var(--brand);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in;
+}
+
+.commander-bouton:hover,
+.commander-bouton:focus,
+main a.commander-bouton:hover,
+main a.commander-bouton:focus {
+  color: var(--paper);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}

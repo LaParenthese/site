@@ -17,7 +17,8 @@ layout: "simple"
 - Téléphone : [01 64 70 68 93](tel:+33164706893)
 - E-mail : [laparenthese.samois@gmail.com](mailto:laparenthese.samois@gmail.com)
 
-Pour commander un livre, appelez-nous ou écrivez-nous : nous le
+Pour commander un livre, remplissez le [formulaire de
+commande](/commander/), appelez-nous ou écrivez-nous : nous le
 mettons de côté et vous prévenons dès qu'il est arrivé.
 
 ## Horaires

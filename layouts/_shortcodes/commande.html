@@ -1,0 +1,97 @@
+{{/* Formulaire de commande d'un livre.
+     Envoie la demande par e-mail à la librairie via Web3Forms
+     (service gratuit, sans base de données, sans compte à gérer).
+     La clé « access_key » ci-dessous est publique : elle sert
+     uniquement à router les messages vers la boîte de la librairie.
+     Pour changer l'adresse de réception ou régénérer la clé :
+     https://web3forms.com (tableau de bord du compte).
+
+     Ce formulaire vit sur la page « Commander un livre »
+     (content/commander.md). Le champ « livres souhaités » se pré-remplit
+     tout seul quand on arrive depuis un bouton « Commander ce livre »
+     d'un billet (voir le shortcode commander-ce-livre). */}}
+<form class="commande-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="33478abc-e64b-40af-a4bc-256683d23d9a">
+  <input type="hidden" name="subject" value="Commande de livre — site La Parenthèse">
+  <input type="hidden" name="from_name" value="Site La Parenthèse">
+  {{/* Champ piège anti-spam : invisible, laissé vide par un humain. */}}
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"
+         aria-hidden="true" style="display: none;">
+
+  <label class="commande-form__label" for="commande-nom">Votre nom</label>
+  <input class="commande-form__field" id="commande-nom" type="text"
+         name="name" required autocomplete="name">
+
+  <label class="commande-form__label" for="commande-email">Votre e-mail</label>
+  <input class="commande-form__field" id="commande-email" type="email"
+         name="email" required autocomplete="email">
+
+  <label class="commande-form__label" for="commande-tel">
+    Votre téléphone <span class="commande-form__hint">(facultatif)</span>
+  </label>
+  <input class="commande-form__field" id="commande-tel" type="tel"
+         name="telephone" autocomplete="tel">
+
+  <label class="commande-form__label" for="commande-livre">
+    Le ou les livres souhaités
+  </label>
+  <textarea class="commande-form__field" id="commande-livre" name="message"
+            rows="4" required
+            placeholder="Titre, auteur (et éditeur si vous le connaissez)"></textarea>
+
+  <button class="commande-form__submit" type="submit">Envoyer ma demande</button>
+  <p class="commande-form__status" role="status" aria-live="polite"></p>
+</form>
+
+{{/* Amélioration progressive : sans JavaScript, le formulaire s'envoie
+     normalement et Web3Forms affiche sa page de confirmation. Avec
+     JavaScript, l'envoi se fait sans quitter la page et un message de
+     confirmation s'affiche en français. */}}
+<script>
+  (function () {
+    if (window.__commandeFormBound) return;
+    window.__commandeFormBound = true;
+
+    // Pré-remplissage du champ depuis l'URL : /commander/?livre=Titre — Auteur
+    // (le bouton « Commander ce livre » des billets fournit ce paramètre).
+    var demande = new URLSearchParams(window.location.search).get("livre");
+    if (demande) {
+      var champ = document.getElementById("commande-livre");
+      if (champ && !champ.value) champ.value = demande;
+    }
+
+    document.addEventListener("submit", function (event) {
+      var form = event.target;
+      if (!form.classList || !form.classList.contains("commande-form")) return;
+      event.preventDefault();
+      var status = form.querySelector(".commande-form__status");
+      var button = form.querySelector(".commande-form__submit");
+      var data = Object.fromEntries(new FormData(form).entries());
+      button.disabled = true;
+      status.textContent = "Envoi en cours…";
+      status.className = "commande-form__status";
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (response) { return response.json(); })
+        .then(function (result) {
+          if (result.success) {
+            form.reset();
+            status.textContent =
+              "Merci ! Votre demande nous est bien parvenue. Nous vous répondrons très vite.";
+            status.className = "commande-form__status commande-form__status--ok";
+          } else {
+            throw new Error(result.message || "Erreur");
+          }
+        })
+        .catch(function () {
+          status.textContent =
+            "Désolé, l'envoi a échoué. Vous pouvez nous téléphoner ou nous écrire directement.";
+          status.className = "commande-form__status commande-form__status--error";
+        })
+        .finally(function () { button.disabled = false; });
+    });
+  })();
+</script>
