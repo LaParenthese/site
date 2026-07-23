@@ -1,0 +1,21 @@
+{{/* Tuile d'actualité entièrement cliquable, partagée par la page
+     d'accueil (summary-with-image.html) et la liste des actualités
+     (summary.html). Le titre porte le lien réel ; le pseudo-élément
+     .tile__link::after (custom.css) l'étend à toute la carte, si bien
+     qu'un clic n'importe où sur la tuile ouvre le billet. Le
+     « Lire la suite → » n'est qu'un repère visuel, pas un second lien. */}}
+{{ $show_date := partials.Include "func/ShowDate.html" . }}
+<div class="tile pa4 overflow-hidden bg-white">
+  {{ if $show_date }}
+    <time class="tile__date f6 db" {{ fmt.Printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+      {{- .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
+    </time>
+  {{ end }}
+  <h2 class="tile__title f3 near-black mt2 mb2">
+    <a href="{{ .RelPermalink }}" class="tile__link link black dim">{{ .Title }}</a>
+  </h2>
+  <div class="tile__summary f5 lh-copy nested-copy-line-height">
+    {{ .Summary }}
+  </div>
+  <span class="tile__more" aria-hidden="true">{{ $.Param "read_more_copy" | compare.Default (lang.Translate "readMore") }} →</span>
+</div>

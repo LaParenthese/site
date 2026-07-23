@@ -209,6 +209,9 @@ footer.bg-parenthese a:hover {
    ------------------------------------------------------------ */
 .tile {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border: 1px solid rgba(13, 37, 48, 0.08);
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(13, 37, 48, 0.08);
@@ -238,10 +241,12 @@ main .tile__link {
   color: var(--brand);
 }
 
-/* Repère « Lire la suite → », lisible et aux couleurs de la maison. */
+/* Repère « Lire la suite → », lisible et aux couleurs de la maison.
+   margin-top: auto le colle au bas des cartes de hauteur égale ;
+   padding-top garantit un espace même dans une tuile courte. */
 .tile__more {
-  display: inline-block;
-  margin-top: 0.9rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
   font-weight: 600;
   font-size: 1rem;
   color: var(--accent);
